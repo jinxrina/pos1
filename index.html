@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="pos-container">
+        <header class="pos-header">
+            <h1>Point of Sale System</h1>
+            <div class="datetime" id="datetime"></div>
+        </header>
+
+        <div class="pos-main">
+            <section class="products-section">
+                <div class="search-bar">
+                    <input type="text" id="product-search" placeholder="Search products...">
+                    <button id="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="category-tabs">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="electronics">Electronics</button>
+                    <button class="category-btn" data-category="clothing">Clothing</button>
+                    <button class="category-btn" data-category="groceries">Groceries</button>
+                </div>
+                <div class="products-grid" id="products-grid">
+                    <!-- Products will be dynamically inserted here -->
+                </div>
+            </section>
+
+            <section class="cart-section">
+                <div class="cart-header">
+                    <h2>Order Summary</h2>
+                    <button id="clear-cart" class="clear-btn">Clear All</button>
+                </div>
+                <div class="cart-items" id="cart-items">
+                    <!-- Cart items will be dynamically inserted here -->
+                    <div class="empty-cart-message">Your cart is empty</div>
+                </div>
+                <div class="cart-totals">
+                    <div class="totals-row">
+                        <span>Subtotal:</span>
+                        <span id="subtotal">$0.00</span>
+                    </div>
+                    <div class="totals-row">
+                        <span>Tax (10%):</span>
+                        <span id="tax">$0.00</span>
+                    </div>
+                    <div class="totals-row total">
+                        <span>Total:</span>
+                        <span id="total">$0.00</span>
+                    </div>
+                </div>
+                <div class="payment-actions">
+                    <button id="checkout-btn" class="checkout-btn">Process Payment</button>
+                    <div class="payment-methods">
+                        <button class="payment-method-btn" data-method="cash"><i class="fas fa-money-bill-wave"></i> Cash</button>
+                        <button class="payment-method-btn" data-method="card"><i class="fas fa-credit-card"></i> Card</button>
+                        <button class="payment-method-btn" data-method="mobile"><i class="fas fa-mobile-alt"></i> Mobile</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="receipt-modal" id="receipt-modal">
+            <div class="receipt-content">
+                <div class="receipt-header">
+                    <h2>Order Receipt</h2>
+                    <span class="close-receipt">&times;</span>
+                </div>
+                <div class="receipt-body" id="receipt-body">
+                    <!-- Receipt content will be inserted here -->
+                </div>
+                <div class="receipt-footer">
+                    <button id="print-receipt" class="print-btn"><i class="fas fa-print"></i> Print Receipt</button>
+                    <button id="new-order" class="new-order-btn"><i class="fas fa-plus"></i> New Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
